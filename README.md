@@ -1,38 +1,30 @@
 # TwoTasks
-Two easy tasks before you apply for an interview
 
-1. Задача: не змінюючи логіки, змінити структуру коду, щоби вона відповідала принципу DRY:
-ctx.prototype.__applyStyleState = function (styleState) {
-var keys = Object.keys(styleState), i, key;
-for (i=0; i<keys.length; i++) {
-key = keys[i];
-this[key] = styleState[key];
-}
-};
-ctx.prototype.__setDefaultStyles = function () {
-var keys = Object.keys(STYLES), i, key; // keys of object - object selection
-for (i=0; i<keys.length; i++) {
-key = keys[i];
-this[key] = STYLES[key].canvas; // field selection
-}
-};
-ctx.prototype.__getStyleState = function () {
-var i, styleState = {}, keys = Object.keys(STYLES), key;
-for (i=0; i<keys.length; i++) {
-key = keys[i];
-styleState[key] = this[key];
-}
-return styleState;
-};
+Two programming tasks to solve before the interview.
 
-2. Друга задача:
+## Task 1: DRY Refactoring Challenge
 
-const multiply = (a,b,c) => a\*b\*c;
-const add = (a,b,c,d,e) => a+b+c+d+e;
+Refactor the code below to adhere to the DRY (Don't Repeat Yourself) principle without changing its logic.
 
-const curry = (f) => { /* write your solution here */ }
+The original code is located in `task1.js`. It contains duplicated patterns for iterating through object keys and setting/getting properties. Your task is to identify these repetitions and create a more maintainable structure.
 
-curry(add)(1)(2)(3)(4)(5) == add(1,2,3,4,5) // should be true
-curry(multiply)(1)(2)(3) == multiply(1,2,3) // should be true
+## Task 2: Function Currying Implementation
 
-Гарного дня! :)
+Implement a universal `curry` function that transforms a regular function into a curried version.
+
+Your implementation should:
+
+- Take any function as an input
+- Return a curried function that collects arguments one by one
+- Return the final result when all arguments have been collected
+- Work with functions of various arities (as shown in the examples)
+
+The skeleton and test cases are available in `task2.js`.
+
+## Requirements
+
+- Do not change the business logic of the code
+- For Task 1, focus on removing duplication while maintaining functionality
+- For Task 2, make sure the curry function works with any number of arguments
+
+Good luck! :)
